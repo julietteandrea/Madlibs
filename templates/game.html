@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Madlibs{% endblock %}
+{% block content %}
+    <form action="/madlib">
+    Type a name: <input type="text" name="person">
+    <br>
+    Choose a color:
+        <select name="color">
+            <option value="red">Red</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+            <option value="silver">Silver</option>
+        </select>
+    <br>
+    Choose a noun:
+        <select name="noun">
+            <option value='animal'>Animal</option>
+            <option value='spoon'>Spoon</option>
+            <option value='computer'>Computer</option>
+            <option value='chair'>Chair</option>
+        </select>
+    <br>
+    Choose an adjective:
+        <select name="adj">
+            <option value='coolio'>Coolio</option>
+            <option value='slick'>Slick</option>
+            <option value='super'>Super</option>
+            <option value='sucky'>Sucky</option>
+        </select>
+    <br>Chooose a number between 2 and 20:
+    <input type="number" name="num" min="2" max="20">
+    <br>Type a verb ending in -ed.<input type="text" name="verb">
+    <br> Pick from this of clothes:
+        <input type="checkbox" name="clothes" value="pants">Pants
+        <input type="checkbox" name="clothes" value="mittens">Mittens
+        <input type="checkbox" name="clothes" value="socks">Socks
+        <input type="checkbox" name="clothes" value="shoes">Shoes
+    <br>
+    <input type='submit'>
+    </form>
+{% endblock %}

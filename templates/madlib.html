@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+    {% block title %} Madlib Results {% endblock %}
+{% block content %} 
+<h2>Here is your Madlib!</h2>
+<p>There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.
+When {{ person }} went to pick it up, it burst into flames after {{ num }} seconds
+in a totally {{ adjective }} way. {{ person }} then caught on fire and {{ verb }}.
+After the fire was put out, {{ person }}'s 
+{% for cloth in clothes %} 
+    {% if loop.length == 1 %}
+        {{ cloth }}
+    {% elif loop.length == 2 %}
+        {% if loop.last %}
+            {{ cloth }}
+        {% else %}
+            {{ cloth }} and 
+        {% endif %}
+    {% else %}
+        {% if loop.last %}
+            and {{ cloth }}
+        {% else %}
+            {{ cloth }},
+        {% endif %}
+    {% endif %}
+{% endfor %} 
+were ruined.</p>
+{% endblock %}
+</html>

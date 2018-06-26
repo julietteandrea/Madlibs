@@ -2,3 +2,15 @@
     max-width: 960px;
     margin: auto;
 }
+.madlib{
+    font-size: 140px;
+}
+.default{
+    border: 5px solid black;
+    margin: 10px;
+    background-color: #ADD8E6;
+}
+body{
+    background-image: url("/static/geode.jpg");
+    background-size: 100%;
+}

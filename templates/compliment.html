@@ -2,11 +2,23 @@
 {% block title %} A Compliment{% endblock %}
 {% block content %}
     Hi {{ person }}! I think you're
-    <ul> 
-    {% for compliment in compliments %}
-        <li> {{ compliment }} </li>
-    {% endfor %}
-    </ul>
+    {% for compliment in compliments %} 
+    {% if loop.length == 1 %}
+        {{ compliment }}.
+    {% elif loop.length == 2 %}
+        {% if loop.last %}
+            {{ compliment }}.
+        {% else %}
+            {{ compliment }} and 
+        {% endif %}
+    {% else %}
+        {% if loop.last %}
+            and {{ compliment }}.
+        {% else %}
+            {{ compliment }},
+        {% endif %}
+    {% endif %}
+{% endfor %} 
     <form action="/game">
     Would you like to play a game?
     <input type="radio" name="answer-game" value="yes">Yes

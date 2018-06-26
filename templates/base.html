@@ -4,8 +4,10 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="/static/madlibs.css">
 </head>
-<body>
-    <div class="centered">
+<body class="centered">
+    <header class="default"><img src="/static/madlib.png" height="100" width="100">
+    <span class="madlib">Madlibs!!</span></header>
+    <div class="default">
 {% block content %}{% endblock %}
 </div>
 </body>

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Madlib Results{% endblock %}
+
+{% block content %} 
+<h2>Here is your Madlib!</h2>
+<p>Pizza was {{ verb }} by a {{ adjective }} chef named {{ person }}.
+To make a pizza, you need to take a lump of {{ noun }}, and make a thin, round 
+{{ adjective }} {{ noun }}. Then you cover it with {{ color }} sauce, cheese, and
+fresh chopped vegetables. Next you have to bake it in a very hot oven. When it is done,
+cut it into {{ num }} triangles. Some people get pizza all over their
+{% for cloth in clothes %} 
+    {% if loop.length == 1 %}
+        {{ cloth }}
+    {% elif loop.length == 2 %}
+        {% if loop.last %}
+            {{ cloth }}
+        {% else %}
+            {{ cloth }} and 
+        {% endif %}
+    {% else %}
+        {% if loop.last %}
+            and {{ cloth }}
+        {% else %}
+            {{ cloth }},
+        {% endif %}
+    {% endif %}
+{% endfor %}. 
+{{ person }} would eat pizza {{ num }} times a day!</p>
+{% endblock %}

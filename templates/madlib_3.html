@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
-    {% block title %} Madlib Results {% endblock %}
-{% block content %} 
+
+{% block title %}Madlib Results{% endblock %}
+
+{% block content %}
 <h2>Here is your Madlib!</h2>
-<p>There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.
-When {{ person }} went to pick it up, it burst into flames after {{ num }} seconds
-in a totally {{ adjective }} way. {{ person }} then caught on fire and {{ verb }}.
-After the fire was put out, {{ person }}'s 
+<p>One day, {{ person }} decided to go to the beach. {{ person }} {{ verb }} all 
+their friends ({{ num }} of them), but none of them could come. One was busy fighting off
+the biggest {{ noun }} ever. So, dejected, {{ person }} drove in their {{ color }}
+car to the beach. {{ person }} had a good time, but got sand in their precious
 {% for cloth in clothes %} 
     {% if loop.length == 1 %}
         {{ cloth }}
@@ -22,6 +24,5 @@ After the fire was put out, {{ person }}'s
             {{ cloth }},
         {% endif %}
     {% endif %}
-{% endfor %} 
-were ruined.</p>
+{% endfor %}.</p>
 {% endblock %}
